@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import CustomModal from '../Modal/modal';
 
 function LoginForm() {
   return (
@@ -15,10 +16,10 @@ function LoginForm() {
           <input type="checkbox" name="remember" id="remember" />
           Remember me
         </label>
-        <a href="#contact"> Forgot  password?</a>
+        <a href="#contact"> Forgot password?</a>
       </div>
       <div className="inputs">
-        <button type="button"> LOGIN </button>
+        <CustomModal />
       </div>
     </main>
   );
