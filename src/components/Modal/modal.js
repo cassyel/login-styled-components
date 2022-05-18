@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { useTheme } from 'styled-components';
 
 const style = {
   position: 'absolute',
@@ -20,11 +21,12 @@ export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const theme = useTheme();
 
   return (
     <div className="inputs">
       <Button
-        style={ { backgroundColor: '#20df7f', color: 'white' } }
+        style={ { backgroundColor: '#20df7f', color: theme.colors.text } }
         onClick={ handleOpen }
         disabled={ false }
       >

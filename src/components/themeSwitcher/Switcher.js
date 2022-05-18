@@ -1,9 +1,9 @@
-/* eslint-disable no-magic-numbers */
 /* eslint-disable max-len */
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import PropTypes from 'prop-types';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -48,17 +48,19 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-track': {
     opacity: 1,
     backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
-    borderRadius: 20 / 2,
+    borderRadius: 10,
   },
 }));
 
-export default function CustomizedSwitches() {
+export default function CustomizedSwitches({ handleTheme }) {
   return (
     <FormControlLabel
       control={ <MaterialUISwitch sx={ { m: 1 } } defaultChecked /> }
-      onChange={ () => {
-        console.log('teste');
-      } }
+      onChange={ () => handleTheme() }
     />
   );
 }
+
+CustomizedSwitches.propTypes = {
+  handleTheme: PropTypes.func.isRequired,
+};
