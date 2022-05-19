@@ -24,6 +24,7 @@ export const Slogan = styled(Title)`
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
+  margin-left: 10px;
 `;
 
 export const ContainerInputs = styled(ContainerFlex)`
