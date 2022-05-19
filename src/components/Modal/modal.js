@@ -26,7 +26,9 @@ export default function BasicModal() {
   return (
     <div className="inputs">
       <Button
-        style={ { backgroundColor: '#20df7f', color: theme.colors.text } }
+        style={ { backgroundColor: '#20df7f',
+          color: theme.colors.text,
+          borderBottom: '3px solid hsla(0, 0%, 0%, 0.507)' } }
         onClick={ handleOpen }
         disabled={ false }
       >
@@ -39,7 +41,12 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={ style }>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography
+            style={ { color: '#2F2F2F' } }
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+          >
             Success login
           </Typography>
         </Box>

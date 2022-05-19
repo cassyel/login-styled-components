@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './App.css';
 import { ThemeProvider } from 'styled-components';
 import LoginForm from './components/login-form/login-form';
 import Switch from './components/themeSwitcher/Switcher';
 import GlobalStyle from './styles/globalStyle';
 import dark from './styles/themes/dark';
 import light from './styles/themes/light';
+import { Container } from './styles/App';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(dark);
@@ -17,11 +17,11 @@ function App() {
 
   return (
     <ThemeProvider theme={ currentTheme }>
-      <div className="App">
-        <GlobalStyle />
+      <GlobalStyle />
+      <Container>
         <Switch handleTheme={ handleTheme } />
         <LoginForm />
-      </div>
+      </Container>
     </ThemeProvider>
   );
 }

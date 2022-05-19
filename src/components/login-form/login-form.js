@@ -1,27 +1,44 @@
 import React from 'react';
-import './style.css';
 import CustomModal from '../Modal/modal';
+import {
+  Main,
+  Slogan,
+  Title,
+  ContainerInputs,
+  DataInput,
+  ContainerOptions,
+  OptionsLabel,
+  OptionsInput,
+  OptionsLink,
+} from './styles';
 
 function LoginForm() {
   return (
-    <main className="container-login">
-      <h1 className="title">Sign in</h1>
-      <p>Sign in and start managing your candidates!</p>
-      <div className="inputs">
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Password" />
-      </div>
-      <div className="options">
-        <label htmlFor="remember">
-          <input type="checkbox" name="remember" id="remember" />
+    <Main>
+      <Title>Sign in</Title>
+      <Slogan>Sign in and start managing your candidates!</Slogan>
+      <ContainerInputs>
+        <DataInput type="text" placeholder="Email" />
+        <DataInput
+          style={ {
+            marginTop: '32px',
+            borderBottom: '3px solid hsla(0, 0%, 0%, 0.507)',
+          } }
+          type="text"
+          placeholder="Password"
+        />
+      </ContainerInputs>
+      <ContainerOptions>
+        <OptionsLabel htmlFor="remember">
+          <OptionsInput type="checkbox" name="remember" id="remember" />
           Remember me
-        </label>
-        <a href="#contact"> Forgot password?</a>
-      </div>
-      <div className="inputs">
+        </OptionsLabel>
+        <OptionsLink href="#contact"> Forgot password?</OptionsLink>
+      </ContainerOptions>
+      <ContainerInputs>
         <CustomModal />
-      </div>
-    </main>
+      </ContainerInputs>
+    </Main>
   );
 }
 
