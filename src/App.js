@@ -8,6 +8,7 @@ import light from './styles/themes/light';
 import { Container } from './styles/App';
 
 function App() {
+  document.title = 'Login System';
   const [currentTheme, setCurrentTheme] = useState(dark);
 
   const handleTheme = () => {
